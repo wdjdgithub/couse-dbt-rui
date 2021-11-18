@@ -1,0 +1,46 @@
+version: 2
+
+sources:
+
+  - name: weekone # name of the source 
+    schema: public # this is the schema our raw data lives in
+    database: dbt # this is the name of our database
+
+    quoting:
+      database: false
+      schema: false
+      identifier: false
+
+    freshness:
+      warn_after: {count: 24, period: hour}
+      error_after: {count: 48, period: hour}
+
+    tables:
+      - name: users 
+        loaded_at_field: created_at
+        description: >
+          Contains users information
+      - name: addresses  
+        loaded_at_field: created_at
+        description: >
+          Contains users address information
+      - name: events 
+        loaded_at_field: created_at
+        description: >
+          Contains users event information   
+      - name: orders 
+        loaded_at_field: created_at
+        description: >
+          Contains users orders information
+      - name: order_items  
+        loaded_at_field: created_at
+        description: >
+          Contains users order items information 
+      - name: products 
+        loaded_at_field: created_at
+        description: >
+          Contains order products information
+      - name: promos  
+        loaded_at_field: created_at
+        description: >
+          Contains order promotion information                             
