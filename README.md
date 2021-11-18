@@ -58,7 +58,7 @@ FROM purchases_by_user
 
 Answer:
 purchases_ct | users_ct 
---------------+----------
+
             1 |       25
             2 |       22
             3 |       32
