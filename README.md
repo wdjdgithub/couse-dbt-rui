@@ -1,6 +1,6 @@
 # Week one project
 
-1. How many users do we have?
+# 1. How many users do we have?
 
 SELECT
 COUNT(user_id) as ct 
@@ -9,7 +9,7 @@ FROM users;
 Answer:
 130
 
-2. On average, how many orders do we receive per hour?
+# 2. On average, how many orders do we receive per hour?
 
 WITH orders_by_hour AS (
 SELECT 
@@ -24,7 +24,7 @@ FROM orders_by_hour;
 Answer:
 8.16
 
-3. On average, how long does an order take from being placed to being delivered?
+# 3. On average, how long does an order take from being placed to being delivered?
 
 WITH days_by_order AS (
 SELECT 
@@ -40,7 +40,7 @@ SELECT AVG(days_diff) FROM days_by_order;
 Answer:
 3.9258160237388724
 
-4. How many users have only made one purchase? Two purchases? Three+ purchases?
+# 4. How many users have only made one purchase? Two purchases? Three+ purchases?
 
 WITH purchases_by_user AS (
 SELECT 
@@ -68,7 +68,7 @@ purchases_ct | users_ct
             7 |        4
             8 |        1
 
-5. On average, how many unique sessions do we have per hour?
+# 5. On average, how many unique sessions do we have per hour?
 
 WITH sessions_by_hour AS (
 SELECT 
